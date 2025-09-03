@@ -14,6 +14,8 @@ class Ball(Turtle):
         self.y_direction = "down"
 
     def move(self):
+        """Ensures that the ball is always moving in a diagonal direction"""
+
         if self.x_direction == "right":
             new_x = self.xcor() + 2
             self.goto(new_x, self.ycor())
@@ -29,11 +31,13 @@ class Ball(Turtle):
             self.goto(self.xcor(), new_y)
 
     def bounce(self):
+        """Makes ball change direction when virtual wall is hit"""
         if self.ycor() > 250:
             self.y_direction = "down"
         if self.ycor() < -250:
             self.y_direction = "up"
 
     def reset(self):
+        """Used when point is scored to rest the ball's position"""
         self.goto(0, 0)
         time.sleep(0.2)

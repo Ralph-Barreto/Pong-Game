@@ -14,23 +14,24 @@ class Bat(Turtle):
         # self.refresh()
 
     def move_up(self):
+        """Makes the bat move upward"""
         new_y = self.ycor() + 30
         self.goto(self.xcor(), new_y)
 
     def move_down(self):
+        """Makes the bat move downward"""
         new_y = self.ycor() - 30
         self.goto(self.xcor(), new_y)
 
-
 ########################################################################################################################
 class Player(Bat):
-
+    """Set up for the Player's bat"""
     def __init__(self):
         super().__init__()
         self.goto(-350, 0)
 
 class Computer(Bat):
-
+    """Set up for the Computer's bat"""
     def __init__(self):
         super().__init__()
         self.goto(350, 0)

@@ -10,15 +10,16 @@ class ScoreBoard(Turtle):
         self.speed("fastest")
 
     def point(self, new_score):
+        """Draws a new score on the screen"""
         self.clear()
         self.write(new_score, align="center", font=("Courier", 48, "normal"))
 
 class PlayerScoreBoard(ScoreBoard):
     def __init__(self):
         super().__init__()
-        self.goto(-200, 200)
+        self.goto(-200, 200) # sets position
 
 class ComputerScoreBoard(ScoreBoard):
     def __init__(self):
         super().__init__()
-        self.goto(200, 200)
+        self.goto(200, 200) # sets position
